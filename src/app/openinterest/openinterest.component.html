@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+	<meta name="description" content="Admin template that can be used to build dashboards for CRM, CMS, etc." />
+	<meta name="author" content="Potenza Global Solutions" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<!-- app favicon -->
+	<link rel="shortcut icon" href="assets/img/favicon.ico">
+	<!-- google fonts -->
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+	<!-- plugin stylesheets -->
+	<link rel="stylesheet" type="text/css" href="assets/css/vendors.css" />
+	<!-- app style -->
+	<link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+</head>
+
+<body>
+	<!-- begin app -->
+	<div class="app">
+		<!-- begin app-wrap -->
+
+		<div class="app-wrap">
+			<!-- begin app-container -->
+			<div class="app-container">
+
+				<!-- begin app-main -->
+				<div class="app-main" id="main">
+					<!-- begin container-fluid -->
+					<div class="container-fluid">
+						<!-- begin row -->
+						<div class="row">
+							<div class="col-md-12 m-b-30">
+								<!-- begin page title -->
+								<div class="d-block d-sm-flex flex-nowrap align-items-center">
+									<div class="page-title mb-2 mb-sm-0">
+										<h1>Change in Open Interest Analysis</h1>
+									</div>
+									<div class="ml-auto d-flex align-items-center">
+										<nav>
+											<ol class="breadcrumb p-0 m-b-0">
+												<li>
+													<a href="index.html"><i class="ti ti-home"></i></a>
+                                                </li>
+                                                <li >
+                                                   Parameters
+                                                </li>
+                                                <li class="breadcrumb-item active text-primary" aria-current="page">>>Change in OI</li>
+                                            </ol>
+                                        </nav>
+                                    </div>
+                                </div>
+                                <!-- end page title -->
+                            </div>
+                        </div>
+                        <div class="text-xxs-center"> 
+                           <h2 style="color: green"> 
+                            Based on OI Change, Today's Market Prediction is "{{todayPredict}}"
+                          </h2>
+                          <!-- <h4 style="color: blue">                                                        
+                            Considering Previous Days OI Change, Market Prediction is "{{finalPredict}}"
+                          </h4>                           -->
+                        </div>
+                        <div class="row no-gutters">
+                                              <div class="col-xxs-6">
+                                                  <div class="media align-items-center p-4 border-sm-right border-bottom">
+                                                   
+                                                    
+                                                    <div class="media-body">
+                                                        <strong class="text-dark">Today Call Side OI At ATM</strong>
+                                                        <h3 class="font-light text-muted mb-0">{{todayCallOIChngATM}}</h3>
+                                                    </div>
+                                                </div>
+                                                <!-- <div class="media align-items-center p-4 border-sm-right border-bottom border-sm-bottom-0">
+                                                    <div class="mr-4">
+                                                        <i class="fe fe-compass text-primary font-30"></i>
+                                                    </div>
+                                                    <div class="media-body">
+                                                        <strong class="text-dark">Put Side OI ATM</strong>
+                                                        <h3 class="font-light text-muted mb-0">15K+</h3>
+                                                    </div>
+                                                </div> -->
+                                            </div>
+                                            <div class="col-xxs-6">
+                                                <div class="media align-items-center p-4 border-bottom">
+                                                 
+                                                    <div class="media-body">
+                                                        <strong class="text-dark">Today Put Side OI At ATM</strong>
+                                                        <h3 class="font-light text-muted mb-0">{{todayPutOIChngATM}}</h3>
+                                                    </div>
+                                                </div>
+                                                <!-- <div class="media align-items-center p-4">
+                                                    <div class="mr-4">
+                                                        <i class="fe fe-activity text-primary font-30"></i>
+                                                    </div>
+                                                    <div class="media-body">
+                                                        <strong class="text-dark">Bounce Rate</strong>
+                                                        <h3 class="font-light text-muted mb-0">87%</h3>
+                                                    </div>
+                                                </div> -->
+                                            </div>
+                                        </div>
+                        <!-- end row -->
+                        <!-- start car dealer-->
+             
+                        <div class="row">
+                            <div class="col-sm-12 col-xxl-3 mb-30">
+                                <div class="card card-statistic car-dealer-contants h-100 mb-0 o-hidden">
+                                    <div class="card-body p-0">
+                                        <div class="bg-gradient">
+                                            <div class="card-header border-0 d-flex justify-content-between mb-3">
+                                                <div class="card-heading">
+                                                    <h4 class="card-title text-white">Weekly Data</h4>
+                                                </div>
+                                                
+                                            </div>
+                                          
+                         <div class="apechart-wrapper">
+                                                  <div id="cardealerdemo1" class="chart-fit"></div>
+                                              </div>
+                                          </div>
+  <!--graph-->
+<div>
+	<div>
+		<div style="display: block">
+			<canvas baseChart height="50" width="180" 
+        [datasets]="barChartData"
+        [labels]="barChartLabels"
+        [options]="barChartOptions"
+        [colors]="barChartColors"
+        [legend]="barChartLegend"
+        [plugins]="barChartPlugins"
+        [chartType]="barChartType">
+      </canvas>
+		</div>
+	
+  </div>
+</div>
+ <!--graph-->
+ <!--second-->
+                                          <div class="bg-gradient">
+                                            <div class="card-header border-0 d-flex justify-content-between mb-3">
+                                                <div class="card-heading">
+                                                    <h4 class="card-title text-white">Today Data</h4>
+                                                </div>
+                                                
+                                            </div>
+                                            
+                                            
+                         <div class="apechart-wrapper">
+                                                  <div id="cardealerdemo1" class="chart-fit"></div>
+                                              </div>
+                                          </div>
+ <!--graph-->
+<div>
+	<div>
+		<div style="display: block">
+			<canvas baseChart height="50" width="180" 
+        [datasets]="barChartData1"
+        [labels]="barChartLabels1"
+        [options]="barChartOptions1"
+        [colors]="barChartColors1"
+        [legend]="barChartLegend1"
+        [plugins]="barChartPlugins"
+        [chartType]="barChartType1">
+      </canvas>
+		</div>
+	
+  </div>
+</div>
+ <!--graph-->
+
+                     
+                                          
+                                    </div>
+                                </div>
+                            </div>
+                           
+                          
+                        </div>
+   
+                       
+    
+                        <!-- end car dealer-->
+                    </div>
+                    <!-- end container-fluid -->
+                </div>
+                <!-- end app-main -->
+            </div>
+            <!-- end app-container -->
+
+        </div>
+        <!-- end app-wrap -->
+    </div>
+    <!-- end app -->
+
+    <!-- plugins -->
+    <script src="assets/js/vendors.js"></script>
+
+    <!-- custom app -->
+    <script src="assets/js/app.js"></script>
+</body>
+
+
+</html>
