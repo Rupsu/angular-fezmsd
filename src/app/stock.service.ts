@@ -15,7 +15,7 @@ export class StockService {
 
   getData(): Promise<MyData[]> {
     return this.http
-      .get('http://localhost:3333/ProjectBackend/StockAPI/getDataFromDB')
+      .get('http://localhost:8765/ProjectBackEnd/StockAPI/getDataFromDB')
       .toPromise()
       .then(resp => resp.json() as MyData[])
       .catch(this.errorHandler);
@@ -23,7 +23,7 @@ export class StockService {
 
   getOIData(): Promise<OITodayData[]> {
     return this.http
-      .get('http://localhost:3333/ProjectBackend/StockAPI/getOIDataFromDB')
+      .get('http://localhost:8765/ProjectBackEnd/StockAPI/getOIDataFromDB')
       .toPromise()
       .then(resp => resp.json() as OITodayData[])
       .catch(this.errorHandler);
@@ -31,7 +31,7 @@ export class StockService {
 
   getFiiDiiData(): Promise<FiiDiiData[]> {
     return this.http
-      .get('http://localhost:3333/ProjectBackend/StockAPI/getFiiDiiData')
+      .get('http://localhost:8765/ProjectBackEnd/StockAPI/getFiiDiiData')
       .toPromise()
       .then(resp => resp.json() as FiiDiiData[])
       .catch(this.errorHandler);
@@ -39,7 +39,7 @@ export class StockService {
 
   getFinalPrediction(): Promise<Number[]> {
     return this.http
-      .get('http://localhost:3333/ProjectBackend/StockAPI/getFinalPrediction')
+      .get('http://localhost:8765/ProjectBackEnd/StockAPI/getFinalPrediction')
       .toPromise()
       .then(resp => resp.json() as Number[])
       .catch(this.errorHandler);
@@ -47,7 +47,7 @@ export class StockService {
 
   getFinalPredictionFromWeb(): Promise<Number[]> {
     return this.http
-      .get('http://localhost:3333/ProjectBackend/StockAPI/getFinalPredictionFromWeb')
+      .get('http://localhost:8765/ProjectBackEnd/StockAPI/getFinalPredictionFromWeb')
       .toPromise()
       .then(resp => resp.json() as Number[])
       .catch(this.errorHandler);

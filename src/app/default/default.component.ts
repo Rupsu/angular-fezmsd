@@ -35,6 +35,7 @@ export class DefaultComponent implements OnInit {
         (resp) => {
           this.result = resp
           // STRIKE PRICE
+          console.log(this.result)
           this.strikePrice = this.result[3]
           // FINAL PREDICTION
           if (this.result[0] == 1) {

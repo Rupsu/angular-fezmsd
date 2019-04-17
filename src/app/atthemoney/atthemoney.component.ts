@@ -32,10 +32,13 @@ export class AtthemoneyComponent implements OnInit {
   constructor(private stockService: StockService) { }
 
   ngOnInit() {
+    console.log('Entered')
     this.stockService.getData()
       .then(
         (stocks) => {
+          console.log('servi')
           this.stocks = stocks
+          console.log(this.stocks)
           for (let i = this.stocks.length - 7; i < this.stocks.length; i++) {
             this.atmCallValue = this.stocks[i].atm[0]
             this.atmPutValue = this.stocks[i].atm[1]
